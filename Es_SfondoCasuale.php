@@ -7,11 +7,15 @@
 </head>
 <body>
     <?php
-        function sfondoCasuale($lar){
+        $lar = rand(50,501);
+        $color = sfondoCasuale($lar);
+        createDiv($lar, $color);
+
+        function sfondoCasuale($l){
             $c;
-            if ($lar < 150) {
+            if ($l < 150) {
                 $c = "#7FFFD4";
-            } elseif ($lar >= 150 && $lar <= 250) {
+            } elseif ($l >= 150 && $l <= 250) {
                 $c = "#1E90FF";
             } else {
                 $c = "#0000FF";
@@ -19,8 +23,8 @@
             return $c;
         }
 
-        function createDiv($lar, $c){
-            echo "";
+        function createDiv($l, $c){
+            echo "<div style='background-color:$c; width:" . $l . "px; height:" . $l*2 . "px;'></div>";
         }
     ?>
 </body>
